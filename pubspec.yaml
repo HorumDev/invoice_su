@@ -1,0 +1,21 @@
+name: invoice_su
+description: A sample command-line application.
+version: 1.0.0
+# homepage: https://www.example.com
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  comparer: ^2.0.1
+  crypto: ^3.0.2
+  crypton: ^2.0.5
+  http: ^0.13.4
+  meta: ^1.7.0
+  json_annotation: ^4.5.0
+
+dev_dependencies:
+  test: ^1.21.3
+  build_runner: ^2.1.11
+  json_serializable: ^6.2.0
+  lints: ^2.0.0
