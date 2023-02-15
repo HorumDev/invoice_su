@@ -5,7 +5,7 @@ import 'models/models.dart';
 class InvoiceAcquiring {
   InvoiceAcquiring(this.config) : _network = NetworkClient(config);
 
-  /// {@macro tinkoff_acquiring_config}
+  /// {@macro invoice_acquiring_config}
   final InvoiceAcquiringConfig config;
 
   /// {@macro network_client}
@@ -69,9 +69,5 @@ class InvoiceAcquiring {
         request,
         (Map<String, dynamic> json) => CreatePaymentResponse.fromJson(json),
       );
-
-//TODO refund
-//TODO refundInfo
-//TODO recurPay
 
 }

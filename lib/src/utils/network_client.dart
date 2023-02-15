@@ -19,9 +19,8 @@ class NetworkClient {
 
   /// Метод вызывает созданный запрос на Acquiring API
   Future<Response> call<Response extends AcquiringResponse>(
-    AcquiringRequest request,
-    Response Function(Map<String, dynamic> json) response,
-  ) async {
+      AcquiringRequest request,
+      Response Function(Map<String, dynamic> json) response,) async {
     final InvoiceAcquiringConfig config = _config;
 
     Map<String, String>? proxyHeaders;
@@ -46,7 +45,9 @@ class NetworkClient {
     final Map<String, String> headers = <String, String>{
       ...request.headers,
       'Authorization':
-          'Basic ${CryptoUtils.base64('${(config as InvoiceAcquiringConfigCredential).login}:${(config).apiKey}')}',
+      'Basic ${CryptoUtils.base64(
+          '${(config as InvoiceAcquiringConfigCredential).login}:${(config)
+              .apiKey}')}',
       // ...?proxyHeaders,
     };
 
@@ -62,11 +63,11 @@ class NetworkClient {
     try {
       rawResponse = await http
           .post(
-            url,
-            headers: headers,
-            body: rawRequest,
-            encoding: Encoding.getByName('UTF-8'),
-          )
+        url,
+        headers: headers,
+        body: rawRequest,
+        encoding: Encoding.getByName('UTF-8'),
+      )
           .timeout(NetworkSettings.timeout);
     } catch (error, stackTrace) {
       config.logger.log(
@@ -109,68 +110,4 @@ class NetworkClient {
     config.logger.log(message: _response.toString(), name: 'Response');
     return _response;
   }
-
-// Map<String, dynamic> _modifyRequest(
-//   AcquiringRequest request,
-//     InvoiceAcquiringConfig config,
-// ) {
-//   final Map<String, dynamic> temp = request.toJson();
-//
-//   if (config is InvoiceAcquiringConfigCredential) {
-//     final String token = SignToken.generate(
-//       terminalKey: config.login,
-//       password: config.apiKey,
-//       request: request,
-//     );
-//
-//     final Map<String, dynamic> _request = temp
-//       ..addAll(<String, dynamic>{
-//         JsonKeys.terminalKey: config.login,
-//         JsonKeys.token: token,
-//       });
-//
-//     return _request;
-//   }
-//
-//   // if (config is InvoiceAcquiringConfigToken) {
-//   //   return temp
-//   //     ..addAll(<String, dynamic>{
-//   //       JsonKeys.terminalKey: config.login,
-//   //     });
-//   // }
-//
-//   return temp;
-// }
 }
-
-/// {@template sign_token}
-/// Создает токен, на основе [login], [apiKey], [request]
-///
-/// Можно использовать только для тестирования
-/// {@endtemplate}
-// class SignToken {
-//   /// {@macro sign_token}
-//   @visibleForTesting
-//   static String generate({
-//     required String terminalKey,
-//     required AcquiringRequest request,
-//     String? password,
-//   }) {
-//     final Map<String, dynamic> temp = request.toJson()
-//       ..addAll(<String, dynamic>{
-//         JsonKeys.terminalKey: terminalKey,
-//         if (password != null && password.isNotEmpty)
-//           JsonKeys.password: password,
-//       });
-//     final List<String> sortedKeys = List<String>.from(temp.keys)..sort();
-//     final StringBuffer buffer = StringBuffer();
-//
-//     for (int i = 0; i < sortedKeys.length; i++) {
-//       if (!request.ignoredFields.contains(sortedKeys[i])) {
-//         buffer.write(temp[sortedKeys[i]]);
-//       }
-//     }
-//
-//     return CryptoUtils.sha256(buffer.toString());
-//   }
-// }

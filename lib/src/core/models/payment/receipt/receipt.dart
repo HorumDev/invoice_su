@@ -4,12 +4,8 @@ import '../../../../constants.dart';
 
 part 'receipt.g.dart';
 
-/// Метод инициирует привязку счета покупателя к магазину в СБП и возвращает информацию о нём.
-///
-/// [AddAccountQrRequest](https://www.tinkoff.ru/kassa/develop/api/payments-sbp/addaccountqr-request/)
 @JsonSerializable(includeIfNull: false)
 class Reciept {
-  /// Создает экземпляр метода который инициирует привязку счета покупателя к магазину в СБП и возвращает информацию о нём.
   Reciept({
     this.discount,
     required this.name,

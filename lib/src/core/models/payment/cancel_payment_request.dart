@@ -9,7 +9,6 @@ part 'cancel_payment_request.g.dart';
 /// [ClosePayment](https://dev.invoice.su/#tag/Kassovoe-API/operation/ClosePayment)
 @JsonSerializable(includeIfNull: false)
 class CancelPaymentRequest extends AcquiringRequest {
-  /// Создает экземпляр метода который инициирует привязку счета покупателя к магазину в СБП и возвращает информацию о нём.
   CancelPaymentRequest({
     required this.id,
     String? signToken,

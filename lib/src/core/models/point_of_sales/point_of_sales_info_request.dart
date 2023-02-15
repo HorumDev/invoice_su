@@ -9,7 +9,6 @@ part 'point_of_sales_info_request.g.dart';
 /// [GetPointOfSale](https://dev.invoice.su/#tag/Kassovoe-API/operation/GetPointOfSale)
 @JsonSerializable(includeIfNull: false)
 class PointOfFalesInfoRequest extends AcquiringRequest {
-  /// Создает экземпляр метода который инициирует привязку счета покупателя к магазину в СБП и возвращает информацию о нём.
   PointOfFalesInfoRequest({
     this.id,
     this.alias,

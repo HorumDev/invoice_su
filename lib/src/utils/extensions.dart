@@ -1,7 +1,7 @@
 /// Extensions for [num]
 extension NumEx on num {
   /// length in num type
-  int get length => toString().length;
+    int get length => toString().length;
 }
 
 /// Extensions for [Map]

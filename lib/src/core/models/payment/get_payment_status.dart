@@ -4,12 +4,8 @@ import '../base/acquiring_request.dart';
 
 part 'get_payment_status.g.dart';
 
-/// Метод инициирует привязку счета покупателя к магазину в СБП и возвращает информацию о нём.
-///
-/// [AddAccountQrRequest](https://www.tinkoff.ru/kassa/develop/api/payments-sbp/addaccountqr-request/)
 @JsonSerializable(includeIfNull: false)
 class GetPaymentStatus extends AcquiringRequest {
-  /// Создает экземпляр метода который инициирует привязку счета покупателя к магазину в СБП и возвращает информацию о нём.
   GetPaymentStatus({
     required this.id,
     String? signToken,

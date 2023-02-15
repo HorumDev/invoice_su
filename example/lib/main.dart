@@ -35,16 +35,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
   final InvoiceAcquiring acquiringInstance = InvoiceAcquiring(
       InvoiceAcquiringConfig.credential(login: demoLogin, apiKey: apiDemoKey));
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
