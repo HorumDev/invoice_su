@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../base/acquiring_request.dart';
 import '../base/acquiring_response.dart';
 import '../enums/enums.dart';
 
@@ -45,7 +44,6 @@ class TerminalInfoResponse extends AcquiringResponse {
         JsonKeys.name: name,
       };
 
-  @override
   TerminalInfoResponse copyWith({
     String? name,
     String? id,

@@ -4,7 +4,6 @@ version: 1.0.0
 repository: https://github.com/HorumDev/invoice_su.git
 homepage: https://horum.co
 
-publish_to: pub.dev
 
 environment:
   sdk: '>=2.12.0 <3.0.0'

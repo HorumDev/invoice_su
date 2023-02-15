@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../base/acquiring_request.dart';
 import '../base/acquiring_response.dart';
 import '../enums/enums.dart';
 
@@ -47,7 +46,7 @@ class PointOfSalesInfoResponse extends AcquiringResponse {
         JsonKeys.name: name,
       };
 
-  @override
+
   PointOfSalesInfoResponse copyWith({
     String? name,
     String? id,

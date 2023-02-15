@@ -6,7 +6,6 @@ export 'data_type.dart';
 export 'language.dart';
 export 'mark_code_type.dart';
 export 'pay_type.dart';
-export 'payment_method.dart';
 export 'payment_object.dart';
 export 'route.dart';
 export 'source.dart';

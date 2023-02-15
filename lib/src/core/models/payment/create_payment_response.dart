@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../base/acquiring_request.dart';
 import '../base/acquiring_response.dart';
 import '../enums/enums.dart';
 import 'payment_models.dart';
