@@ -1,6 +1,6 @@
 <h1 align="center">Invoice su Acquiring SDK</h1>
 
-Acquiring SDK allows you to integrate [Invoice su Acquiring][acquiring] into mobile applications for iOS, Android, Web, Windows< Linux< MacOS platforms.
+Acquiring SDK allows you to integrate [Invoice su Acquiring][acquiring] into applications for iOS, Android, Web, Windows, Linux, MacOS platforms.
 
 [Available API Documentation][documentation].
 
@@ -15,7 +15,7 @@ Acquiring SDK allows you to integrate [Invoice su Acquiring][acquiring] into mob
 Add this to your package's pubspec.yaml file:
 ```yaml
 dependencies:
-  Invoice_su: ^1.0.0
+  invoice_su: ^1.0.1
 ```
 
 ## Before usage
@@ -26,9 +26,6 @@ To get started with the SDK, you'll need:
 * **terminalId** – to start make payments it needs to select one.
 
 These values are issued in your personal account after connecting to [Invoice su Acquiring][acquiring].
-
-SDK allows you to configure operating mode (debug / prod), by default - debug.
-The SDK also allows you to configure request proxying, by default all requests go to Tinkoff servers.
 
 ### Credential
 

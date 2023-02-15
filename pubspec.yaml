@@ -1,6 +1,6 @@
 name: invoice_su
 description: A dart package for work with invoice.su acquiring
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/HorumDev/invoice_su.git
 homepage: https://horum.co
 
